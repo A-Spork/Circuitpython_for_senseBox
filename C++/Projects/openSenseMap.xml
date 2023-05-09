@@ -1,0 +1,36 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="arduino_functions" id="QWW|$jB8+*EL;}|#uA" deletable="false" x="247" y="146">
+    <statement name="SETUP_FUNC">
+      <block type="sensebox_wifi" id="k9vAw9:*`0+7tT4c%u:r">
+        <field name="SSID">SSID</field>
+        <field name="Password">Password</field>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="sensebox_interval_timer" id="o,S-wkj{,,V@+q]8t~b=">
+        <field name="name">Interval</field>
+        <field name="interval">10000</field>
+        <statement name="DO">
+          <block type="sensebox_osem_connection" id="~DuViRX88l{}9e5kSE1F">
+            <field name="SSL">FALSE</field>
+            <field name="RESTART">TRUE</field>
+            <field name="type">Stationary</field>
+            <field name="BoxID">senseBox ID</field>
+            <field name="access_token">access_token</field>
+            <statement name="DO">
+              <block type="sensebox_send_to_osem" id="nDKKV#k,e807W3DNG[ux">
+                <field name="SensorID">CO2 in ppm</field>
+                <value name="Value">
+                  <block type="sensebox_scd30" id="a*Vyp=;`*,,MzMki]4$u">
+                    <field name="dropdown">CO2</field>
+                    <data>[object Object]</data>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,82 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="arduino_functions" id="QWW|$jB8+*EL;}|#uA" deletable="false" x="247" y="146">
+    <statement name="SETUP_FUNC">
+      <block type="sensebox_display_beginDisplay" id="54.M^0lXVyI*j;Xo4o6D"></block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="sensebox_display_show" id="hsb^2;V9#V0:(k;G7]E0">
+        <statement name="SHOW">
+          <block type="sensebox_display_fastPrint" id="V.Hd7QlD.BhN]m@GB$RG">
+            <value name="Title1">
+              <block type="text" id="_`E1`SV9f+dN%/!eR~j(">
+                <field name="TEXT">CO2</field>
+              </block>
+            </value>
+            <value name="Value1">
+              <block type="sensebox_scd30" id="~ZmmS67h=IQ-V!{c!u.X">
+                <field name="dropdown">CO2</field>
+                <data>[object Object]</data>
+              </block>
+            </value>
+            <value name="Dimension1">
+              <block type="text" id="}H7[nYN:*#ZiRBcIF2@j">
+                <field name="TEXT">ppm</field>
+              </block>
+            </value>
+            <value name="Title2">
+              <block type="text" id="~%(y2k}isKZ`V52$K;?+">
+                <field name="TEXT">Tmp</field>
+              </block>
+            </value>
+            <value name="Value2">
+              <block type="sensebox_scd30" id="X%`mUmh=~bIexhwp(YB*">
+                <field name="dropdown">temperature</field>
+                <data>[object Object]</data>
+              </block>
+            </value>
+            <value name="Dimension2">
+              <block type="text" id="kWC2`er?k]LuhfNrmn%n">
+                <field name="TEXT">°C</field>
+              </block>
+            </value>
+            <next>
+              <block type="sensebox_display_fastPrint" id=",*X)G;f[1*_~hLtp(fE5">
+                <value name="Title1">
+                  <block type="text" id="k0j[SPZ+=1?+qT6Vkbm1">
+                    <field name="TEXT">rH</field>
+                  </block>
+                </value>
+                <value name="Value1">
+                  <block type="sensebox_scd30" id="o.*lC2Ai?/vR-OY;M0fY">
+                    <field name="dropdown">humidity</field>
+                    <data>[object Object]</data>
+                  </block>
+                </value>
+                <value name="Dimension1">
+                  <block type="text" id="Y]Sk:4x(D$r1VbRqQc)#">
+                    <field name="TEXT">%</field>
+                  </block>
+                </value>
+                <value name="Title2">
+                  <block type="text" id="ePhiu.rkE9dxuP-Zz(6:">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+                <value name="Value2">
+                  <block type="text" id="a|:ywR[rxhE)ToPPYb=c">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+                <value name="Dimension2">
+                  <block type="text" id="[p0Z1FZ/x6LxE3yc]avd">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

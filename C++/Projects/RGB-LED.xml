@@ -1,0 +1,133 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="arduino_functions" id="QWW|$jB8+*EL;}|#uA" deletable="false" x="247" y="146">
+    <statement name="SETUP_FUNC">
+      <block type="sensebox_ws2818_led_init" id="-`f__3:*s,,[NCVBpYOc">
+        <field name="Port">1</field>
+        <value name="BRIGHTNESS">
+          <block type="math_number" id="{s7MvCvvJn}_oyRIwN!^">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="NUMBER">
+          <block type="math_number" id="n@ZNK0z1WPm-H@s11Llp">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="sensebox_ws2818_led" id=":C$yjICcY+nRjxC15n$N">
+        <field name="Port">1</field>
+        <value name="POSITION">
+          <block type="math_number" id="N+k*Nj1]3:?3ehr--0#F">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="COLOR">
+          <block type="colour_rgb" id="Lm94)3oK(R)dYcYJj(C{">
+            <value name="RED">
+              <block type="math_number" id=":4Uh~XC|huU!d[H-HPCv">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+            <value name="GREEN">
+              <block type="math_number" id="WN^_)%Lt=:syetrCU]!A">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="BLUE">
+              <block type="math_number" id="xYcnMHCaajs;79}3jt|}">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="u2Jbm`I,B;4$I?wfM93`">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="|6ISpC1=4I-c.PP_YVis">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="sensebox_ws2818_led" id="pyX2/:qDnk.qjG9Kiq3s">
+                <field name="Port">1</field>
+                <value name="POSITION">
+                  <block type="math_number" id="RYZ.4*60i6P~jeZcBO-E">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_rgb" id="?KvSVhLox.7x]D[D}m9_">
+                    <value name="RED">
+                      <block type="math_number" id="6k!Oi9(XW,,_tgbiE{R:">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="GREEN">
+                      <block type="math_number" id=";H@?*P5OTjECYi(Y3A7M">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <value name="BLUE">
+                      <block type="math_number" id="NG]rKn65/*[Mr3:-:;Ux">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="%.W4,M/7(EF;k+A8e]@F">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="PzQI$x@chJG#wvCTcB*.">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="sensebox_ws2818_led" id=":9IuZ3N5x=gL$dq-xxl[">
+                        <field name="Port">1</field>
+                        <value name="POSITION">
+                          <block type="math_number" id="nx~4D-0G6f`n$3~y+Xk+">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="COLOR">
+                          <block type="colour_rgb" id="G$V`U1C+]8FdWp3|Kv6.">
+                            <value name="RED">
+                              <block type="math_number" id="*x@4{K-(|`1RtJ%vAuB-">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="GREEN">
+                              <block type="math_number" id="CH|mrE)Ei/dE)h@N0l+a">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="BLUE">
+                              <block type="math_number" id="zbL.pEe=%A*3@dwy8]8X">
+                                <field name="NUM">100</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="time_delay" id="$Mk$Gs-l:(f0r:yPO#tJ">
+                            <value name="DELAY_TIME_MILI">
+                              <block type="math_number" id=",8v|e,1)sda`U!,{nte1">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

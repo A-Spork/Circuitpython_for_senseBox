@@ -1,0 +1,167 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable type="float" id="}Mca%-0OPC]^5!+?Y=zH">CO2</variable>
+  </variables>
+  <block type="arduino_functions" id="QWW|$jB8+*EL;}|#uA" deletable="false" x="247" y="146">
+    <statement name="SETUP_FUNC">
+      <block type="sensebox_display_beginDisplay" id="54.M^0lXVyI*j;Xo4o6D">
+        <next>
+          <block type="sensebox_ws2818_led_init" id="25FV#tU@P#6T;f)(e4C9">
+            <field name="Port">6</field>
+            <value name="BRIGHTNESS">
+              <block type="math_number" id="TNWhrOUF6D2?RxdWdyuT">
+                <field name="NUM">30</field>
+              </block>
+            </value>
+            <value name="NUMBER">
+              <block type="math_number" id="CnkF4NPPf0Y?P%(8xb](">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="variables_set_dynamic" id="L2szef/j1(*m8tf#WziX">
+        <field name="VAR" id="}Mca%-0OPC]^5!+?Y=zH" variabletype="float">CO2</field>
+        <value name="VALUE">
+          <block type="sensebox_scd30" id="~ZmmS67h=IQ-V!{c!u.X">
+            <field name="dropdown">CO2</field>
+            <data>[object Object]</data>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="JI+G-Bx_9PSd{Fm1:CRR">
+            <mutation xmlns="http://www.w3.org/1999/xhtml" elseif="1" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="N6~]js,$p~X7osrpJ.Rm">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get_dynamic" id="#|?{86@/`)iaY#;W`e1{">
+                    <field name="VAR" id="}Mca%-0OPC]^5!+?Y=zH" variabletype="float">CO2</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="_oc.5tU*1]?w3b4-BCIT">
+                    <field name="NUM">800</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="sensebox_ws2818_led" id=";Lw;$L[Zwrji6^dSezXd">
+                <field name="Port">6</field>
+                <value name="POSITION">
+                  <block type="math_number" id="x5m5%WPNV#Zc{aI7;olQ">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_picker" id="K4KLeHq:C(]Jy[Zr#)zt">
+                    <field name="COLOUR">#009900</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="HyX^99qB8z$gCSP8GRL)">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get_dynamic" id="2AH+9^7J[e=(v},,L^s/">
+                    <field name="VAR" id="}Mca%-0OPC]^5!+?Y=zH" variabletype="float">CO2</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="8xC{)HRu-Xox`lTNk}X{">
+                    <field name="NUM">1500</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="sensebox_ws2818_led" id="RicR}l{zVK$zB/U;(++e">
+                <field name="Port">6</field>
+                <value name="POSITION">
+                  <block type="math_number" id="8E`rHVr;?#,~!K$y:Oc}">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_picker" id="]4us9}u/Q6k!ixowvPl8">
+                    <field name="COLOUR">#ffff99</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="sensebox_ws2818_led" id="|vBD{$V`CT6ILKMqPIuw">
+                <field name="Port">6</field>
+                <value name="POSITION">
+                  <block type="math_number" id="tUbZ==D%SEpMZ91N9)?$">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_picker" id="OnZ$9UpUcu?iS=#0lZJA">
+                    <field name="COLOUR">#ff0000</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="sensebox_display_show" id="hsb^2;V9#V0:(k;G7]E0">
+                <statement name="SHOW">
+                  <block type="sensebox_display_fastPrint" id="V.Hd7QlD.BhN]m@GB$RG">
+                    <value name="Title1">
+                      <block type="text" id="_`E1`SV9f+dN%/!eR~j(">
+                        <field name="TEXT">CO2</field>
+                      </block>
+                    </value>
+                    <value name="Value1">
+                      <block type="variables_get_dynamic" id="Fa0[5=_OM`T-%F$Tt9]Q">
+                        <field name="VAR" id="}Mca%-0OPC]^5!+?Y=zH" variabletype="float">CO2</field>
+                      </block>
+                    </value>
+                    <value name="Dimension1">
+                      <block type="text" id="}H7[nYN:*#ZiRBcIF2@j">
+                        <field name="TEXT">ppm</field>
+                      </block>
+                    </value>
+                    <value name="Title2">
+                      <block type="text" id="~%(y2k}isKZ`V52$K;?+">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="Value2">
+                      <block type="text" id="d,?q(#Akn}MU:R=TupQE">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="Dimension2">
+                      <block type="text" id="kWC2`er?k]LuhfNrmn%n">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="time_delay" id="yj*8~.q9`s,9dw^v/azD">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="Ea#IrCR|`Dc,/L7Sm{4|">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="sensebox_display_clearDisplay" id="|0)_2r-AejG6|RU*Zi/k"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

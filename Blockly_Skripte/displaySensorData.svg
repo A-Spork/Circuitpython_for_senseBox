@@ -1,0 +1,1048 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="427.9340515136719" height="574" viewBox="247 146 427.9340515136719 574">
+                  <defs><style type="text/css" xmlns="http://www.w3.org/1999/xhtml"><![CDATA[.blocklyText, 
+.blocklyFlyoutLabelText {
+font: normal 11pt sans-serif;
+}
+.blocklyText {
+fill: #fff;
+}
+.blocklyNonEditableText>rect,
+.blocklyEditableText>rect {
+fill: #fff;
+fill-opacity: .6;
+stroke: none;
+}
+.blocklyNonEditableText>text,
+.blocklyEditableText>text {
+fill: #000;
+}
+.blocklyFlyoutLabelText {
+fill: #000;
+}
+.blocklyText.blocklyBubbleText {
+fill: #000;
+}
+.blocklyEditableText:not(.editing):hover>rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.blocklyHtmlInput {
+font-family: sans-serif;
+font-weight: normal;
+}
+.blocklySelected>.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.blocklyHighlightedConnectionPath {
+stroke: #fc3;
+}
+.blocklyPath {
+fill-opacity: .5;
+}
+.blocklyPathLight,
+.blocklyPathDark {
+display: none;
+}
+.blocklyInsertionMarker>.blocklyPath {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklySvg {
+  background-color: #fff;
+  outline: none;
+  overflow: hidden;  /* IE overflows by default. */
+  position: absolute;
+  display: block;
+}
+
+.blocklyWidgetDiv {
+  display: none;
+  position: absolute;
+  z-index: 99999;  /* big value for bootstrap3 compatibility */
+}
+
+.injectionDiv {
+  height: 100%;
+  position: relative;
+  overflow: hidden;  /* So blocks in drag surface disappear at edges */
+  touch-action: none;
+}
+
+.blocklyNonSelectable {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.blocklyWsDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Added as a separate rule with multiple classes to make it more specific
+   than a bootstrap rule that selects svg:root. See issue #1275 for context.
+*/
+.blocklyWsDragSurface.blocklyOverflowVisible {
+  overflow: visible;
+}
+
+.blocklyBlockDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible !important;
+  z-index: 50;  /* Display below toolbox, but above everything else. */
+}
+
+.blocklyBlockCanvas.blocklyCanvasTransitioning,
+.blocklyBubbleCanvas.blocklyCanvasTransitioning {
+  transition: transform .5s;
+}
+
+.blocklyTooltipDiv {
+  background-color: #ffffc7;
+  border: 1px solid #ddc;
+  box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+  color: #000;
+  display: none;
+  font: 9pt sans-serif;
+  opacity: .9;
+  padding: 2px;
+  position: absolute;
+  z-index: 100000;  /* big value for bootstrap3 compatibility */
+}
+
+.blocklyDropDownDiv {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  border: 1px solid;
+  border-color: #dadce0;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownDiv.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownContent {
+  max-height: 300px;  /* @todo: spec for maximum height. */
+  overflow: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.blocklyDropDownArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  z-index: -1;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+.blocklyDropDownButton {
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+  transition: box-shadow .1s;
+  cursor: pointer;
+}
+
+.blocklyArrowTop {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-top-left-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyArrowBottom {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-bottom-right-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyResizeSE {
+  cursor: se-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeSW {
+  cursor: sw-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeLine {
+  stroke: #515A5A;
+  stroke-width: 1;
+}
+
+.blocklyHighlightedConnectionPath {
+  fill: none;
+  stroke: #fc3;
+  stroke-width: 4px;
+}
+
+.blocklyPathLight {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+}
+
+.blocklySelected>.blocklyPathLight {
+  display: none;
+}
+
+.blocklyDraggable {
+  /* backup for browsers (e.g. IE11) that don't support grab */
+  cursor: url("/media/blockly/handopen.cur"), auto;
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+.blocklyDragging {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+  /* Changes cursor on mouse down. Not effective in Firefox because of
+     https://bugzilla.mozilla.org/show_bug.cgi?id=771241 */
+.blocklyDraggable:active {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Change the cursor on the whole drag surface in case the mouse gets
+   ahead of block during a drag. This way the cursor is still a closed hand.
+  */
+.blocklyDraggable {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.blocklyDragging.blocklyDraggingDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyDragging>.blocklyPath,
+.blocklyDragging>.blocklyPathLight {
+  fill-opacity: .8;
+  stroke-opacity: .8;
+}
+
+.blocklyDragging>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyDisabled>.blocklyPath {
+  fill-opacity: .5;
+  stroke-opacity: .5;
+}
+
+.blocklyDisabled>.blocklyPathLight,
+.blocklyDisabled>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyInsertionMarker>.blocklyPath,
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+  fill-opacity: .2;
+  stroke: none;
+}
+
+.blocklyMultilineText {
+  font-family: monospace;
+}
+
+.blocklyNonEditableText>text {
+  pointer-events: none;
+}
+
+.blocklyFlyout {
+  position: absolute;
+  z-index: 20;
+}
+
+.blocklyText text {
+  cursor: default;
+}
+
+/*
+  Don't allow users to select text.  It gets annoying when trying to
+  drag a block and selected text moves instead.
+*/
+.blocklySvg text,
+.blocklyBlockDragSurface text {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: inherit;
+}
+
+.blocklyHidden {
+  display: none;
+}
+
+.blocklyFieldDropdown:not(.blocklyHidden) {
+  display: block;
+}
+
+.blocklyIconGroup {
+  cursor: default;
+}
+
+.blocklyIconGroup:not(:hover),
+.blocklyIconGroupReadonly {
+  opacity: .6;
+}
+
+.blocklyIconShape {
+  fill: #00f;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.blocklyIconSymbol {
+  fill: #fff;
+}
+
+.blocklyMinimalBody {
+  margin: 0;
+  padding: 0;
+}
+
+.blocklyHtmlInput {
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Edge and IE introduce a close icon when the input value is longer than a
+   certain length. This affects our sizing calculations of the text input.
+   Hiding the close icon to avoid that. */
+.blocklyHtmlInput::-ms-clear {
+  display: none;
+}
+
+.blocklyMainBackground {
+  stroke-width: 1;
+  stroke: #c6c6c6;  /* Equates to #ddd due to border being off-pixel. */
+}
+
+.blocklyMutatorBackground {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-width: 1;
+}
+
+.blocklyFlyoutBackground {
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyMainWorkspaceScrollbar {
+  z-index: 20;
+}
+
+.blocklyFlyoutScrollbar {
+  z-index: 30;
+}
+
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+  position: absolute;
+  outline: none;
+}
+
+.blocklyScrollbarBackground {
+  opacity: 0;
+}
+
+.blocklyScrollbarHandle {
+  fill: #ccc;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #bbb;
+}
+
+/* Darken flyout scrollbars due to being on a grey background. */
+/* By contrast, workspace scrollbars are on a white background. */
+.blocklyScrollbarHandle {
+  fill: #bbb;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #aaa;
+}
+
+.blocklyInvalidInput {
+  background: #faa;
+}
+
+.blocklyVerticalMarker {
+  stroke-width: 3px;
+  fill: rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.blocklyComputeCanvas {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.blocklyNoPointerEvents {
+  pointer-events: none;
+}
+
+.blocklyContextMenu {
+  border-radius: 4px;
+  max-height: 100%;
+}
+
+.blocklyDropdownMenu {
+  border-radius: 2px;
+  padding: 0 !important;
+}
+
+.blocklyMenuItem {
+  /* 28px on the left for icon or checkbox. */
+  padding-left: 28px;
+}
+
+/* BiDi override for the resting state. */
+.blocklyMenuItemRtl {
+  /* Flip left/right padding for BiDi. */
+  padding-left: 5px;
+  padding-right: 28px;
+}
+
+.blocklyMenu {
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  font: normal 13px Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 4px 0;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+.blocklyMenu.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyMenu {
+  background: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  border: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  font: normal 13px "Helvetica Neue", Helvetica, sans-serif;
+  outline: none;
+  position: relative;  /* Compatibility with gapi, reset from goog-menu */
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+/* State: resting. */
+.blocklyMenuItem {
+  border: none;
+  color: #000;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  /* 7em on the right for shortcut. */
+  min-width: 7em;
+  padding: 6px 15px;
+  white-space: nowrap;
+}
+
+/* State: disabled. */
+.blocklyMenuItemDisabled {
+  color: #ccc;
+  cursor: inherit;
+}
+
+/* State: hover. */
+.blocklyMenuItemHighlight {
+  background-color: rgba(0,0,0,.1);
+}
+
+/* State: selected/checked. */
+.blocklyMenuItemCheckbox {
+  height: 16px;
+  position: absolute;
+  width: 16px;
+}
+
+.blocklyMenuItemCheckbox {
+  background: url(/media/blockly/sprites.png) no-repeat -48px -16px;
+  float: left;
+  margin-left: -24px;
+  position: static;  /* Scroll with the menu. */
+}
+
+.blocklyMenuItemCheckbox {
+  float: right;
+  margin-right: -24px;
+}
+
+
+.blocklyCommentForeignObject {
+  position: relative;
+  z-index: 0;
+}
+
+.blocklyCommentRect {
+  fill: #E7DE8E;
+  stroke: #bcA903;
+  stroke-width: 1px;
+}
+
+.blocklyCommentTarget {
+  fill: transparent;
+  stroke: #bcA903;
+}
+
+.blocklyCommentTargetFocused {
+  fill: none;
+}
+
+.blocklyCommentHandleTarget {
+  fill: none;
+}
+
+.blocklyCommentHandleTargetFocused {
+  fill: transparent;
+}
+
+.blocklyFocused>.blocklyCommentRect {
+  fill: #B9B272;
+  stroke: #B9B272;
+}
+
+.blocklySelected>.blocklyCommentTarget {
+  stroke: #fc3;
+  stroke-width: 3px;
+}
+
+.blocklyCommentDeleteIcon {
+  cursor: pointer;
+  fill: #000;
+  display: none;
+}
+
+.blocklyCommentDeleteIcon {
+  display: block;
+}
+
+.blocklyDeleteIconShape {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.blocklyDeleteIconShape.blocklyDeleteIconHighlighted {
+  stroke: #fc3;
+}
+
+
+.blocklyCommentTextarea {
+  background-color: #fef49c;
+  border: 0;
+  display: block;
+  margin: 0;
+  outline: 0;
+  padding: 3px;
+  resize: none;
+  text-overflow: hidden;
+}
+
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 5px 1px 0;
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 0 1px 5px;
+}
+
+.blocklyTreeRow {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 3px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.blocklyTreeRow {
+  margin-left: 8px;
+  padding-right: 0;
+}
+
+.blocklyTreeIcon {
+  background-image: url(/media/blockly/sprites.png);
+  height: 16px;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 16px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: -32px -1px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: 0 -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: -32px -17px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: 0 -17px;
+}
+
+.blocklyTreeIconOpen {
+  background-position: -16px -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconOpen {
+  background-position: -16px -17px;
+}
+
+.blocklyTreeLabel {
+  cursor: default;
+  font: 16px sans-serif;
+  padding: 0 3px;
+  vertical-align: middle;
+}
+
+.blocklyTreeLabel {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyTreeLabel {
+  color: #fff;
+}
+
+
+.blocklyTreeSeparator {
+  border-bottom: solid #e5e5e5 1px;
+  height: 0;
+  margin: 5px 0;
+}
+
+.blocklyTreeSeparator {
+  border-right: solid #e5e5e5 1px;
+  border-bottom: none;
+  height: auto;
+  margin: 0 5px 0 5px;
+  padding: 5px 0;
+  width: 0;
+}
+
+
+.blocklyToolboxDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyToolboxGrab {
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Category tree in Toolbox. */
+.blocklyToolboxDiv {
+  background-color: #ddd;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 4px 0 4px 0;
+  position: absolute;
+  z-index: 70;  /* so blocks go under toolbox when dragging */
+  -webkit-tap-highlight-color: transparent;  /* issue #1345 */
+}
+
+.blocklyToolboxContents {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.blocklyToolboxContents:focus {
+  outline: none;
+}
+
+
+.blocklyZoom>svg>image {
+  opacity: .4;
+}
+
+.blocklyZoom>svg>image:hover {
+  opacity: .6;
+}
+
+.blocklyZoom>svg>image:active {
+  opacity: .8;
+}
+
+
+.blocklyFlyoutButton {
+  fill: #888;
+  cursor: default;
+}
+
+.blocklyFlyoutButtonShadow {
+  fill: #666;
+}
+
+.blocklyFlyoutButton:hover {
+  fill: #aaa;
+}
+
+.blocklyFlyoutLabel {
+  cursor: default;
+}
+
+.blocklyFlyoutLabelBackground {
+  opacity: 0;
+}
+
+
+.blocklyHtmlTextAreaInput {
+  font-family: monospace;
+  resize: none;
+  overflow: hidden;
+  height: 100%;
+  text-align: left;
+}
+
+.blocklyHtmlTextAreaInputOverflowedY {
+  overflow-y: scroll;
+}
+
+
+.blocklyColourTable {
+  border-collapse: collapse;
+  display: block;
+  outline: none;
+  padding: 1px;
+}
+
+.blocklyColourTable>tr>td {
+  border: .5px solid #888;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  width: 20px;
+}
+
+.blocklyColourTable>tr>td.blocklyColourHighlighted {
+  border-color: #eee;
+  box-shadow: 2px 2px 7px 2px rgba(0,0,0,.3);
+  position: relative;
+}
+
+.blocklyColourSelected:hover {
+  border-color: #eee !important;
+  outline: 1px solid #333;
+  position: relative;
+}
+
+
+.blocklyAngleCircle {
+  stroke: #444;
+  stroke-width: 1;
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyAngleMarks {
+  stroke: #444;
+  stroke-width: 1;
+}
+
+.blocklyAngleGauge {
+  fill: #f88;
+  fill-opacity: .8;
+  pointer-events: none;
+}
+
+.blocklyAngleLine {
+  stroke: #f00;
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+
+.blocklyModalOverlay {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: fixed;
+}
+.blocklyModalContainer {
+  background-color: white;
+  border: 1px solid gray;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 1em;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 20px grey;
+  z-index: 100;
+  margin: 15% auto;
+}
+.blocklyModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blocklyModalHeaderTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.25;
+}
+.blocklyModalBtn {
+  margin-left: auto;
+  height: fit-content;
+}
+.blocklyModalBtnClose:before {
+  content: "\2715";
+}
+.blocklyModalBtn {
+  margin-right: .5em;
+  border: 1px solid gray;
+  font-weight: 500;
+  color: gray;
+  border-radius: 25px;
+}
+.blocklyModalBtnPrimary {
+  background-color: gray;
+  color: white;
+}
+
+
+.typedModalTitle {
+  font-weight: bold;
+  font-size: 1em;
+}
+.typedModalVariableInputContainer {
+  margin: 1em 0 1em 0;
+}
+.typedModalVariableLabel{
+  margin-right: .5em;
+}
+.typedModalTypes ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+.typedModalTypes li {
+  margin-right: 1em;
+  display: flex;
+}
+
+
+/** Setup grid layout of DropDown */
+.fieldGridDropDownContainer.blocklyMenu {
+    display: grid;
+    grid-gap: 7px;
+  }
+/* Change look of cells (add border, sizing, padding, and text color) */
+.blocklyMenuItem {
+  border: 1px solid rgba(1, 1, 1, 0.5);
+  border-radius: 4px;
+  color: white;
+  min-width: auto;
+  padding-left: 15px; /* override padding-left now that checkmark is hidden */
+}
+/* Change look of selected cell */
+.blocklyMenuItemCheckbox {
+  display: none; /* Hide checkmark */
+}
+.blocklyMenuItem.blocklyMenuItemSelected {
+  background-color: rgba(1, 1, 1, 0.25);
+}
+/* Change look of focus/highlighted cell */
+.blocklyMenuItem.blocklyMenuItemHighlight {
+  box-shadow: 0 0 0 4px hsla(0, 0%, 100%, .2);
+}
+.blocklyMenuItemHighlight {
+  /* Uses less selectors so as to not affect blocklyMenuItemSelected */
+  background-color: inherit;
+}
+.fieldGridDropDownContainer {
+  margin: 7px; /* needed for highlight */
+}
+
+
+.fieldSliderContainer {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 150px;
+}
+.fieldSlider {
+  -webkit-appearance: none;
+  background: transparent; /* override white in chrome */
+  margin: 4px;
+  padding: 0;
+  width: 100%;
+}
+.fieldSlider:focus {
+  outline: none;
+}
+/* Webkit */
+.fieldSlider::-webkit-slider-runnable-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  margin-top: -7px;
+  width: 24px;
+}
+/* Firefox */
+.fieldSlider::-moz-range-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-moz-range-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.fieldSlider::-moz-focus-outer {
+  /* override the focus border style */
+  border: 0;
+}
+/* IE */
+.fieldSlider::-ms-track {
+  /* IE wont let the thumb overflow the track, so fake it */
+  background: transparent;
+  border-color: transparent;
+  border-width: 15px 0;
+  /* remove default tick marks */
+  color: transparent;
+  height: 10px;
+  width: 100%;
+  margin: -4px 0;
+}
+.fieldSlider::-ms-fill-lower  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-fill-upper  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+
+.zoomToFit {
+  opacity: .4;
+}
+.zoomToFit:hover {
+  opacity: .6;
+}
+.zoomToFit:active {
+  opacity: .8;
+}
+
+
+.blocklyBackpack {
+  opacity: .4;
+}
+.blocklyBackpackDarken {
+  opacity: .6;
+}
+.blocklyBackpack:active {
+  opacity: .8;
+}
+.blocklyPath {
+        fill-opacity: 1;
+      }
+      .blocklyPathDark {
+        display: flex;
+      }
+      .blocklyPathLight {
+        display: flex;
+      }  ]]></style></defs>"><g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas"><g class="blocklyCursor"><g width="100" height="5"><rect width="100" height="5" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></rect><rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none"/><path transform="" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path><path transform="" style="display: none" fill="none" stroke-width="4"><animate attributeType="XML" attributeName="stroke" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path></g></g><g data-id="QWW|$jB8+*EL;}|#uA" class="blocklyDraggable" transform="translate(247,146)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a4984" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 116.29484558105469  v 5  H 124.29484558105469  V 5  H 124.29484558105469  V 21  H 124.29484558105469  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 13 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 59  H 124.29484558105469  V 75  H 124.29484558105469  V 79  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 468 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 563  V 573  h -116.29484558105469 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#995ba5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 116.29484558105469  v 5  H 124.29484558105469  V 5  H 124.29484558105469  V 21  H 124.29484558105469  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 13 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 59  H 124.29484558105469  V 75  H 124.29484558105469  V 79  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 468 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 563  V 573  h -116.29484558105469 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#b88cc0" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 123.79484558105469  H 123.79484558105469  M 20,54  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 95.79484558105469,0  H 123.79484558105469  M 20,563  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 95.79484558105469,0  H 123.79484558105469  M 0,573  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Setup()</text></g><g transform="translate(10,59)"><text class="blocklyText" x="0" y="13">Endlosschleife()</text></g><g data-id="54.M^0lXVyI*j;Xo4o6D" class="blocklyDraggable" style="display: block;" transform="translate(21,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 118.73291015625  v 5  H 148.73291015625  V 5  H 148.73291015625  V 21  H 148.73291015625  V 21  V 25  h -119.23291015625  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 118.73291015625  v 5  H 148.73291015625  V 5  H 148.73291015625  V 21  H 148.73291015625  V 21  V 25  h -119.23291015625  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 148.23291015625  H 148.23291015625  M 0,25  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Display initialisieren</text></g></g><g data-id="hsb^2;V9#V0:(k;G7]E0" class="blocklyDraggable" transform="translate(21,80)" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 135.85536193847656  v 5  H 165.85536193847656  V 5  H 165.85536193847656  V 21  H 165.85536193847656  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 429 a 8 8 0 0,0 8,8  H 165.85536193847656  H 165.85536193847656  V 470  V 480  h -136.35536193847656  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 135.85536193847656  v 5  H 165.85536193847656  V 5  H 165.85536193847656  V 21  H 165.85536193847656  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 429 a 8 8 0 0,0 8,8  H 165.85536193847656  H 165.85536193847656  V 470  V 480  h -136.35536193847656  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 165.35536193847656  H 165.35536193847656  M 20,470  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 137.35536193847656,0  H 165.35536193847656  M 0,480  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Zeige auf dem Display</text></g><g data-id="V.Hd7QlD.BhN]m@GB$RG" class="blocklyDraggable" transform="translate(21,26)" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 109.61772155761719  v 5  H 139.6177215576172  V 5  H 139.6177215576172  V 21  H 139.6177215576172  V 31  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 57  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 109  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 135  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 161  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 213  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 229  V 233  h -110.11772155761719  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 109.61772155761719  v 5  H 139.6177215576172  V 5  H 139.6177215576172  V 21  H 139.6177215576172  V 31  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 57  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 109  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 135  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 161  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 213  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 229  V 233  h -110.11772155761719  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 139.1177215576172  H 139.1177215576172  M 139.6177215576172,31  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,57  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,109  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,135  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,161  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,213  m -5,14.3  l 3.68,-2.1  M 0.5,232.5  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Zeige Messwerte</text></g><g transform="translate(10,31)"><text class="blocklyText" x="0" y="13">Titel</text></g><g transform="translate(10,57)"><text class="blocklyText" x="0" y="13">Messwert</text></g><g transform="translate(10,109)"><text class="blocklyText" x="0" y="13">Einheit</text></g><g transform="translate(10,135)"><text class="blocklyText" x="0" y="13">Titel</text></g><g transform="translate(10,161)"><text class="blocklyText" x="0" y="13">Messwert</text></g><g transform="translate(10,213)"><text class="blocklyText" x="0" y="13">Einheit</text></g><g data-id="_`E1`SV9f+dN%/!eR~j(" transform="translate(132.6177215576172,26)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 94.14317321777344  v 5  H 102.14317321777344  V 5  H 102.14317321777344  V 21  H 102.14317321777344  V 21  V 25  h -94.14317321777344  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 94.14317321777344  v 5  H 102.14317321777344  V 5  H 102.14317321777344  V 21  H 102.14317321777344  V 21  V 25  h -94.14317321777344  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 101.64317321777344  H 101.64317321777344  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="40.14317321777344" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">CO2</text></g><g transform="translate(80.14317321777344,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="}H7[nYN:*#ZiRBcIF2@j" transform="translate(132.6177215576172,104)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 92.51824951171875  v 5  H 100.51824951171875  V 5  H 100.51824951171875  V 21  H 100.51824951171875  V 21  V 25  h -92.51824951171875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 92.51824951171875  v 5  H 100.51824951171875  V 5  H 100.51824951171875  V 21  H 100.51824951171875  V 21  V 25  h -92.51824951171875  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 100.01824951171875  H 100.01824951171875  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="38.51824951171875" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">ppm</text></g><g transform="translate(78.51824951171875,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="~%(y2k}isKZ`V52$K;?+" transform="translate(132.6177215576172,130)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 93.31997680664062  v 5  H 101.31997680664062  V 5  H 101.31997680664062  V 21  H 101.31997680664062  V 21  V 25  h -93.31997680664062  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 93.31997680664062  v 5  H 101.31997680664062  V 5  H 101.31997680664062  V 21  H 101.31997680664062  V 21  V 25  h -93.31997680664062  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 100.81997680664062  H 100.81997680664062  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="39.319976806640625" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">Tmp</text></g><g transform="translate(79.31997680664062,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="kWC2`er?k]LuhfNrmn%n" transform="translate(132.6177215576172,208)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 80.44953918457031  v 5  H 88.44953918457031  V 5  H 88.44953918457031  V 21  H 88.44953918457031  V 21  V 25  h -80.44953918457031  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 80.44953918457031  v 5  H 88.44953918457031  V 5  H 88.44953918457031  V 21  H 88.44953918457031  V 21  V 25  h -80.44953918457031  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 87.94953918457031  H 87.94953918457031  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="26.449539184570312" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">°C</text></g><g transform="translate(66.44953918457031,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="~ZmmS67h=IQ-V!{c!u.X" class="blocklyDraggable" style="display: block;" transform="translate(132.6177215576172,52)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0  h 226.95053100585938  v 5  H 234.95053100585938  V 5  H 234.95053100585938  V 21  H 234.95053100585938  V 31  H 234.95053100585938  V 47  H 234.95053100585938  V 47  V 51  h -226.95053100585938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 8,0  h 226.95053100585938  v 5  H 234.95053100585938  V 5  H 234.95053100585938  V 21  H 234.95053100585938  V 31  H 234.95053100585938  V 47  H 234.95053100585938  V 47  V 51  h -226.95053100585938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0  m 0.5,0.5  H 234.45053100585938  H 234.45053100585938  M 8.5,50.5  M 8.5,50.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><text class="blocklyText" x="0" y="13">CO2 Sensor (Sensirion SCD30)</text></g><g transform="translate(53.61912536621094,31)"><text class="blocklyText" x="0" y="13">Messwert:</text></g><g class="blocklyEditableText" transform="translate(125.4122314453125,31)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="104.53829956054688" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">CO2 in ppm<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="X%`mUmh=~bIexhwp(YB*" class="blocklyDraggable" style="display: block;" transform="translate(132.6177215576172,156)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0  h 226.95053100585938  v 5  H 234.95053100585938  V 5  H 234.95053100585938  V 21  H 234.95053100585938  V 31  H 234.95053100585938  V 47  H 234.95053100585938  V 47  V 51  h -226.95053100585938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 8,0  h 226.95053100585938  v 5  H 234.95053100585938  V 5  H 234.95053100585938  V 21  H 234.95053100585938  V 31  H 234.95053100585938  V 47  H 234.95053100585938  V 47  V 51  h -226.95053100585938  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0  m 0.5,0.5  H 234.45053100585938  H 234.45053100585938  M 8.5,50.5  M 8.5,50.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><text class="blocklyText" x="0" y="13">CO2 Sensor (Sensirion SCD30)</text></g><g transform="translate(21.686431884765625,31)"><text class="blocklyText" x="0" y="13">Messwert:</text></g><g class="blocklyEditableText" transform="translate(93.47953796386719,31)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="136.4709930419922" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Temperatur in °C<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id=",*X)G;f[1*_~hLtp(fE5" transform="translate(0,234)" class="blocklyDraggable"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 109.61772155761719  v 5  H 139.6177215576172  V 5  H 139.6177215576172  V 21  H 139.6177215576172  V 31  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 57  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 109  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 135  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 161  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 187  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 203  V 207  h -110.11772155761719  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 109.61772155761719  v 5  H 139.6177215576172  V 5  H 139.6177215576172  V 21  H 139.6177215576172  V 31  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 57  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 27  H 139.6177215576172  V 109  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 135  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 161  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 187  H 139.6177215576172  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 1  H 139.6177215576172  V 203  V 207  h -110.11772155761719  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 139.1177215576172  H 139.1177215576172  M 139.6177215576172,31  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,57  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,109  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,135  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,161  m -5,14.3  l 3.68,-2.1  M 139.6177215576172,187  m -5,14.3  l 3.68,-2.1  M 0,207  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 0.5 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Zeige Messwerte</text></g><g transform="translate(10,31)"><text class="blocklyText" x="0" y="13">Titel</text></g><g transform="translate(10,57)"><text class="blocklyText" x="0" y="13">Messwert</text></g><g transform="translate(10,109)"><text class="blocklyText" x="0" y="13">Einheit</text></g><g transform="translate(10,135)"><text class="blocklyText" x="0" y="13">Titel</text></g><g transform="translate(10,161)"><text class="blocklyText" x="0" y="13">Messwert</text></g><g transform="translate(10,187)"><text class="blocklyText" x="0" y="13">Einheit</text></g><g data-id="o.*lC2Ai?/vR-OY;M0fY" transform="translate(132.6177215576172,52)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 8,0  h 244.3163299560547  v 5  H 252.3163299560547  V 5  H 252.3163299560547  V 21  H 252.3163299560547  V 31  H 252.3163299560547  V 47  H 252.3163299560547  V 47  V 51  h -244.3163299560547  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 8,0  h 244.3163299560547  v 5  H 252.3163299560547  V 5  H 252.3163299560547  V 21  H 252.3163299560547  V 31  H 252.3163299560547  V 47  H 252.3163299560547  V 47  V 51  h -244.3163299560547  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 8,0  m 0.5,0.5  H 251.8163299560547  H 251.8163299560547  M 8.5,50.5  M 8.5,50.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><text class="blocklyText" x="0" y="13">CO2 Sensor (Sensirion SCD30)</text></g><g transform="translate(18,31)"><text class="blocklyText" x="0" y="13">Messwert:</text></g><g class="blocklyEditableText" transform="translate(89.79310607910156,31)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="157.52322387695312" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Luftfeuchtigkeit in %<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g></g><g data-id="Y]Sk:4x(D$r1VbRqQc)#" transform="translate(132.6177215576172,104)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 77.03507995605469  v 5  H 85.03507995605469  V 5  H 85.03507995605469  V 21  H 85.03507995605469  V 21  V 25  h -77.03507995605469  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 77.03507995605469  v 5  H 85.03507995605469  V 5  H 85.03507995605469  V 21  H 85.03507995605469  V 21  V 25  h -77.03507995605469  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 84.53507995605469  H 84.53507995605469  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="23.035079956054688" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">%</text></g><g transform="translate(63.03507995605469,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="k0j[SPZ+=1?+qT6Vkbm1" transform="translate(132.6177215576172,26)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 79.46885681152344  v 5  H 87.46885681152344  V 5  H 87.46885681152344  V 21  H 87.46885681152344  V 21  V 25  h -79.46885681152344  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 79.46885681152344  v 5  H 87.46885681152344  V 5  H 87.46885681152344  V 21  H 87.46885681152344  V 21  V 25  h -79.46885681152344  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 86.96885681152344  H 86.96885681152344  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="25.468856811523438" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">rH</text></g><g transform="translate(65.46885681152344,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="a|:ywR[rxhE)ToPPYb=c" class="blocklyDraggable" transform="translate(132.6177215576172,156)" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 75.57301330566406  H 75.57301330566406  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="14.073013305664062" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13"> </text></g><g transform="translate(54.07301330566406,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="[p0Z1FZ/x6LxE3yc]avd" class="blocklyDraggable" transform="translate(132.6177215576172,182)" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 75.57301330566406  H 75.57301330566406  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="14.073013305664062" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13"> </text></g><g transform="translate(54.07301330566406,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g data-id="ePhiu.rkE9dxuP-Zz(6:" class="blocklyDraggable" transform="translate(132.6177215576172,130)" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498470" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba58c" d=" m 8,0  h 68.07301330566406  v 5  H 76.07301330566406  V 5  H 76.07301330566406  V 21  H 76.07301330566406  V 21  V 25  h -68.07301330566406  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8cc0af" d=" m 8,0  m 0.5,0.5  H 75.57301330566406  H 75.57301330566406  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g transform="translate(18,5)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(35,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="14.073013305664062" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13"> </text></g><g transform="translate(54.07301330566406,5)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g></g></g></g></g></g></svg>

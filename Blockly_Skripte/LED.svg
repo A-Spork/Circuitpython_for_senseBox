@@ -1,0 +1,1048 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="327.0465087890625" height="303" viewBox="506.8814392089844 214.33334350585938 327.0465087890625 303">
+                  <defs><style type="text/css" xmlns="http://www.w3.org/1999/xhtml"><![CDATA[.blocklyText, 
+.blocklyFlyoutLabelText {
+font: normal 11pt sans-serif;
+}
+.blocklyText {
+fill: #fff;
+}
+.blocklyNonEditableText>rect,
+.blocklyEditableText>rect {
+fill: #fff;
+fill-opacity: .6;
+stroke: none;
+}
+.blocklyNonEditableText>text,
+.blocklyEditableText>text {
+fill: #000;
+}
+.blocklyFlyoutLabelText {
+fill: #000;
+}
+.blocklyText.blocklyBubbleText {
+fill: #000;
+}
+.blocklyEditableText:not(.editing):hover>rect {
+stroke: #fff;
+stroke-width: 2;
+}
+.blocklyHtmlInput {
+font-family: sans-serif;
+font-weight: normal;
+}
+.blocklySelected>.blocklyPath {
+stroke: #fc3;
+stroke-width: 3px;
+}
+.blocklyHighlightedConnectionPath {
+stroke: #fc3;
+}
+.blocklyPath {
+fill-opacity: .5;
+}
+.blocklyPathLight,
+.blocklyPathDark {
+display: none;
+}
+.blocklyInsertionMarker>.blocklyPath {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+fill-opacity: 0.2;
+stroke: none;
+}
+.blocklySvg {
+  background-color: #fff;
+  outline: none;
+  overflow: hidden;  /* IE overflows by default. */
+  position: absolute;
+  display: block;
+}
+
+.blocklyWidgetDiv {
+  display: none;
+  position: absolute;
+  z-index: 99999;  /* big value for bootstrap3 compatibility */
+}
+
+.injectionDiv {
+  height: 100%;
+  position: relative;
+  overflow: hidden;  /* So blocks in drag surface disappear at edges */
+  touch-action: none;
+}
+
+.blocklyNonSelectable {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.blocklyWsDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Added as a separate rule with multiple classes to make it more specific
+   than a bootstrap rule that selects svg:root. See issue #1275 for context.
+*/
+.blocklyWsDragSurface.blocklyOverflowVisible {
+  overflow: visible;
+}
+
+.blocklyBlockDragSurface {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: visible !important;
+  z-index: 50;  /* Display below toolbox, but above everything else. */
+}
+
+.blocklyBlockCanvas.blocklyCanvasTransitioning,
+.blocklyBubbleCanvas.blocklyCanvasTransitioning {
+  transition: transform .5s;
+}
+
+.blocklyTooltipDiv {
+  background-color: #ffffc7;
+  border: 1px solid #ddc;
+  box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
+  color: #000;
+  display: none;
+  font: 9pt sans-serif;
+  opacity: .9;
+  padding: 2px;
+  position: absolute;
+  z-index: 100000;  /* big value for bootstrap3 compatibility */
+}
+
+.blocklyDropDownDiv {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  border: 1px solid;
+  border-color: #dadce0;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownDiv.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyDropDownContent {
+  max-height: 300px;  /* @todo: spec for maximum height. */
+  overflow: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.blocklyDropDownArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  z-index: -1;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+.blocklyDropDownButton {
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+  transition: box-shadow .1s;
+  cursor: pointer;
+}
+
+.blocklyArrowTop {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-top-left-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyArrowBottom {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-bottom-right-radius: 4px;
+  border-color: inherit;
+}
+
+.blocklyResizeSE {
+  cursor: se-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeSW {
+  cursor: sw-resize;
+  fill: #aaa;
+}
+
+.blocklyResizeLine {
+  stroke: #515A5A;
+  stroke-width: 1;
+}
+
+.blocklyHighlightedConnectionPath {
+  fill: none;
+  stroke: #fc3;
+  stroke-width: 4px;
+}
+
+.blocklyPathLight {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+}
+
+.blocklySelected>.blocklyPathLight {
+  display: none;
+}
+
+.blocklyDraggable {
+  /* backup for browsers (e.g. IE11) that don't support grab */
+  cursor: url("/media/blockly/handopen.cur"), auto;
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+.blocklyDragging {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+  /* Changes cursor on mouse down. Not effective in Firefox because of
+     https://bugzilla.mozilla.org/show_bug.cgi?id=771241 */
+.blocklyDraggable:active {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Change the cursor on the whole drag surface in case the mouse gets
+   ahead of block during a drag. This way the cursor is still a closed hand.
+  */
+.blocklyDraggable {
+  /* backup for browsers (e.g. IE11) that don't support grabbing */
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.blocklyDragging.blocklyDraggingDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyDragging>.blocklyPath,
+.blocklyDragging>.blocklyPathLight {
+  fill-opacity: .8;
+  stroke-opacity: .8;
+}
+
+.blocklyDragging>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyDisabled>.blocklyPath {
+  fill-opacity: .5;
+  stroke-opacity: .5;
+}
+
+.blocklyDisabled>.blocklyPathLight,
+.blocklyDisabled>.blocklyPathDark {
+  display: none;
+}
+
+.blocklyInsertionMarker>.blocklyPath,
+.blocklyInsertionMarker>.blocklyPathLight,
+.blocklyInsertionMarker>.blocklyPathDark {
+  fill-opacity: .2;
+  stroke: none;
+}
+
+.blocklyMultilineText {
+  font-family: monospace;
+}
+
+.blocklyNonEditableText>text {
+  pointer-events: none;
+}
+
+.blocklyFlyout {
+  position: absolute;
+  z-index: 20;
+}
+
+.blocklyText text {
+  cursor: default;
+}
+
+/*
+  Don't allow users to select text.  It gets annoying when trying to
+  drag a block and selected text moves instead.
+*/
+.blocklySvg text,
+.blocklyBlockDragSurface text {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: inherit;
+}
+
+.blocklyHidden {
+  display: none;
+}
+
+.blocklyFieldDropdown:not(.blocklyHidden) {
+  display: block;
+}
+
+.blocklyIconGroup {
+  cursor: default;
+}
+
+.blocklyIconGroup:not(:hover),
+.blocklyIconGroupReadonly {
+  opacity: .6;
+}
+
+.blocklyIconShape {
+  fill: #00f;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.blocklyIconSymbol {
+  fill: #fff;
+}
+
+.blocklyMinimalBody {
+  margin: 0;
+  padding: 0;
+}
+
+.blocklyHtmlInput {
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Edge and IE introduce a close icon when the input value is longer than a
+   certain length. This affects our sizing calculations of the text input.
+   Hiding the close icon to avoid that. */
+.blocklyHtmlInput::-ms-clear {
+  display: none;
+}
+
+.blocklyMainBackground {
+  stroke-width: 1;
+  stroke: #c6c6c6;  /* Equates to #ddd due to border being off-pixel. */
+}
+
+.blocklyMutatorBackground {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-width: 1;
+}
+
+.blocklyFlyoutBackground {
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyMainWorkspaceScrollbar {
+  z-index: 20;
+}
+
+.blocklyFlyoutScrollbar {
+  z-index: 30;
+}
+
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+  position: absolute;
+  outline: none;
+}
+
+.blocklyScrollbarBackground {
+  opacity: 0;
+}
+
+.blocklyScrollbarHandle {
+  fill: #ccc;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #bbb;
+}
+
+/* Darken flyout scrollbars due to being on a grey background. */
+/* By contrast, workspace scrollbars are on a white background. */
+.blocklyScrollbarHandle {
+  fill: #bbb;
+}
+
+.blocklyScrollbarBackground:hover+.blocklyScrollbarHandle,
+.blocklyScrollbarHandle:hover {
+  fill: #aaa;
+}
+
+.blocklyInvalidInput {
+  background: #faa;
+}
+
+.blocklyVerticalMarker {
+  stroke-width: 3px;
+  fill: rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.blocklyComputeCanvas {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.blocklyNoPointerEvents {
+  pointer-events: none;
+}
+
+.blocklyContextMenu {
+  border-radius: 4px;
+  max-height: 100%;
+}
+
+.blocklyDropdownMenu {
+  border-radius: 2px;
+  padding: 0 !important;
+}
+
+.blocklyMenuItem {
+  /* 28px on the left for icon or checkbox. */
+  padding-left: 28px;
+}
+
+/* BiDi override for the resting state. */
+.blocklyMenuItemRtl {
+  /* Flip left/right padding for BiDi. */
+  padding-left: 5px;
+  padding-right: 28px;
+}
+
+.blocklyMenu {
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  font: normal 13px Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 4px 0;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+.blocklyMenu.blocklyFocused {
+  box-shadow: 0 0 6px 1px rgba(0,0,0,.3);
+}
+
+.blocklyMenu {
+  background: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  border: inherit;  /* Compatibility with gapi, reset from goog-menu */
+  font: normal 13px "Helvetica Neue", Helvetica, sans-serif;
+  outline: none;
+  position: relative;  /* Compatibility with gapi, reset from goog-menu */
+  z-index: 20000;  /* Arbitrary, but some apps depend on it... */
+}
+
+/* State: resting. */
+.blocklyMenuItem {
+  border: none;
+  color: #000;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  /* 7em on the right for shortcut. */
+  min-width: 7em;
+  padding: 6px 15px;
+  white-space: nowrap;
+}
+
+/* State: disabled. */
+.blocklyMenuItemDisabled {
+  color: #ccc;
+  cursor: inherit;
+}
+
+/* State: hover. */
+.blocklyMenuItemHighlight {
+  background-color: rgba(0,0,0,.1);
+}
+
+/* State: selected/checked. */
+.blocklyMenuItemCheckbox {
+  height: 16px;
+  position: absolute;
+  width: 16px;
+}
+
+.blocklyMenuItemCheckbox {
+  background: url(/media/blockly/sprites.png) no-repeat -48px -16px;
+  float: left;
+  margin-left: -24px;
+  position: static;  /* Scroll with the menu. */
+}
+
+.blocklyMenuItemCheckbox {
+  float: right;
+  margin-right: -24px;
+}
+
+
+.blocklyCommentForeignObject {
+  position: relative;
+  z-index: 0;
+}
+
+.blocklyCommentRect {
+  fill: #E7DE8E;
+  stroke: #bcA903;
+  stroke-width: 1px;
+}
+
+.blocklyCommentTarget {
+  fill: transparent;
+  stroke: #bcA903;
+}
+
+.blocklyCommentTargetFocused {
+  fill: none;
+}
+
+.blocklyCommentHandleTarget {
+  fill: none;
+}
+
+.blocklyCommentHandleTargetFocused {
+  fill: transparent;
+}
+
+.blocklyFocused>.blocklyCommentRect {
+  fill: #B9B272;
+  stroke: #B9B272;
+}
+
+.blocklySelected>.blocklyCommentTarget {
+  stroke: #fc3;
+  stroke-width: 3px;
+}
+
+.blocklyCommentDeleteIcon {
+  cursor: pointer;
+  fill: #000;
+  display: none;
+}
+
+.blocklyCommentDeleteIcon {
+  display: block;
+}
+
+.blocklyDeleteIconShape {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.blocklyDeleteIconShape.blocklyDeleteIconHighlighted {
+  stroke: #fc3;
+}
+
+
+.blocklyCommentTextarea {
+  background-color: #fef49c;
+  border: 0;
+  display: block;
+  margin: 0;
+  outline: 0;
+  padding: 3px;
+  resize: none;
+  text-overflow: hidden;
+}
+
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 5px 1px 0;
+}
+
+.blocklyToolboxCategory {
+  margin: 1px 0 1px 5px;
+}
+
+.blocklyTreeRow {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 3px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.blocklyTreeRow {
+  margin-left: 8px;
+  padding-right: 0;
+}
+
+.blocklyTreeIcon {
+  background-image: url(/media/blockly/sprites.png);
+  height: 16px;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 16px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: -32px -1px;
+}
+
+.blocklyTreeIconClosed {
+  background-position: 0 -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: -32px -17px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconClosed {
+  background-position: 0 -17px;
+}
+
+.blocklyTreeIconOpen {
+  background-position: -16px -1px;
+}
+
+.blocklyTreeSelected>.blocklyTreeIconOpen {
+  background-position: -16px -17px;
+}
+
+.blocklyTreeLabel {
+  cursor: default;
+  font: 16px sans-serif;
+  padding: 0 3px;
+  vertical-align: middle;
+}
+
+.blocklyTreeLabel {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyTreeLabel {
+  color: #fff;
+}
+
+
+.blocklyTreeSeparator {
+  border-bottom: solid #e5e5e5 1px;
+  height: 0;
+  margin: 5px 0;
+}
+
+.blocklyTreeSeparator {
+  border-right: solid #e5e5e5 1px;
+  border-bottom: none;
+  height: auto;
+  margin: 0 5px 0 5px;
+  padding: 5px 0;
+  width: 0;
+}
+
+
+.blocklyToolboxDelete {
+  cursor: url("/media/blockly/handdelete.cur"), auto;
+}
+
+.blocklyToolboxGrab {
+  cursor: url("/media/blockly/handclosed.cur"), auto;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Category tree in Toolbox. */
+.blocklyToolboxDiv {
+  background-color: #ddd;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 4px 0 4px 0;
+  position: absolute;
+  z-index: 70;  /* so blocks go under toolbox when dragging */
+  -webkit-tap-highlight-color: transparent;  /* issue #1345 */
+}
+
+.blocklyToolboxContents {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.blocklyToolboxContents:focus {
+  outline: none;
+}
+
+
+.blocklyZoom>svg>image {
+  opacity: .4;
+}
+
+.blocklyZoom>svg>image:hover {
+  opacity: .6;
+}
+
+.blocklyZoom>svg>image:active {
+  opacity: .8;
+}
+
+
+.blocklyFlyoutButton {
+  fill: #888;
+  cursor: default;
+}
+
+.blocklyFlyoutButtonShadow {
+  fill: #666;
+}
+
+.blocklyFlyoutButton:hover {
+  fill: #aaa;
+}
+
+.blocklyFlyoutLabel {
+  cursor: default;
+}
+
+.blocklyFlyoutLabelBackground {
+  opacity: 0;
+}
+
+
+.blocklyHtmlTextAreaInput {
+  font-family: monospace;
+  resize: none;
+  overflow: hidden;
+  height: 100%;
+  text-align: left;
+}
+
+.blocklyHtmlTextAreaInputOverflowedY {
+  overflow-y: scroll;
+}
+
+
+.blocklyColourTable {
+  border-collapse: collapse;
+  display: block;
+  outline: none;
+  padding: 1px;
+}
+
+.blocklyColourTable>tr>td {
+  border: .5px solid #888;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  width: 20px;
+}
+
+.blocklyColourTable>tr>td.blocklyColourHighlighted {
+  border-color: #eee;
+  box-shadow: 2px 2px 7px 2px rgba(0,0,0,.3);
+  position: relative;
+}
+
+.blocklyColourSelected:hover {
+  border-color: #eee !important;
+  outline: 1px solid #333;
+  position: relative;
+}
+
+
+.blocklyAngleCircle {
+  stroke: #444;
+  stroke-width: 1;
+  fill: #ddd;
+  fill-opacity: .8;
+}
+
+.blocklyAngleMarks {
+  stroke: #444;
+  stroke-width: 1;
+}
+
+.blocklyAngleGauge {
+  fill: #f88;
+  fill-opacity: .8;
+  pointer-events: none;
+}
+
+.blocklyAngleLine {
+  stroke: #f00;
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+
+.blocklyModalOverlay {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  position: fixed;
+}
+.blocklyModalContainer {
+  background-color: white;
+  border: 1px solid gray;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 1em;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 10px 20px grey;
+  z-index: 100;
+  margin: 15% auto;
+}
+.blocklyModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blocklyModalHeaderTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.25;
+}
+.blocklyModalBtn {
+  margin-left: auto;
+  height: fit-content;
+}
+.blocklyModalBtnClose:before {
+  content: "\2715";
+}
+.blocklyModalBtn {
+  margin-right: .5em;
+  border: 1px solid gray;
+  font-weight: 500;
+  color: gray;
+  border-radius: 25px;
+}
+.blocklyModalBtnPrimary {
+  background-color: gray;
+  color: white;
+}
+
+
+.typedModalTitle {
+  font-weight: bold;
+  font-size: 1em;
+}
+.typedModalVariableInputContainer {
+  margin: 1em 0 1em 0;
+}
+.typedModalVariableLabel{
+  margin-right: .5em;
+}
+.typedModalTypes ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+.typedModalTypes li {
+  margin-right: 1em;
+  display: flex;
+}
+
+
+/** Setup grid layout of DropDown */
+.fieldGridDropDownContainer.blocklyMenu {
+    display: grid;
+    grid-gap: 7px;
+  }
+/* Change look of cells (add border, sizing, padding, and text color) */
+.blocklyMenuItem {
+  border: 1px solid rgba(1, 1, 1, 0.5);
+  border-radius: 4px;
+  color: white;
+  min-width: auto;
+  padding-left: 15px; /* override padding-left now that checkmark is hidden */
+}
+/* Change look of selected cell */
+.blocklyMenuItemCheckbox {
+  display: none; /* Hide checkmark */
+}
+.blocklyMenuItem.blocklyMenuItemSelected {
+  background-color: rgba(1, 1, 1, 0.25);
+}
+/* Change look of focus/highlighted cell */
+.blocklyMenuItem.blocklyMenuItemHighlight {
+  box-shadow: 0 0 0 4px hsla(0, 0%, 100%, .2);
+}
+.blocklyMenuItemHighlight {
+  /* Uses less selectors so as to not affect blocklyMenuItemSelected */
+  background-color: inherit;
+}
+.fieldGridDropDownContainer {
+  margin: 7px; /* needed for highlight */
+}
+
+
+.fieldSliderContainer {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 150px;
+}
+.fieldSlider {
+  -webkit-appearance: none;
+  background: transparent; /* override white in chrome */
+  margin: 4px;
+  padding: 0;
+  width: 100%;
+}
+.fieldSlider:focus {
+  outline: none;
+}
+/* Webkit */
+.fieldSlider::-webkit-slider-runnable-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  margin-top: -7px;
+  width: 24px;
+}
+/* Firefox */
+.fieldSlider::-moz-range-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 10px;
+}
+.fieldSlider::-moz-range-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.fieldSlider::-moz-focus-outer {
+  /* override the focus border style */
+  border: 0;
+}
+/* IE */
+.fieldSlider::-ms-track {
+  /* IE wont let the thumb overflow the track, so fake it */
+  background: transparent;
+  border-color: transparent;
+  border-width: 15px 0;
+  /* remove default tick marks */
+  color: transparent;
+  height: 10px;
+  width: 100%;
+  margin: -4px 0;
+}
+.fieldSlider::-ms-fill-lower  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-fill-upper  {
+  background: #ddd;
+  border-radius: 5px;
+}
+.fieldSlider::-ms-thumb {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15);
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+
+.zoomToFit {
+  opacity: .4;
+}
+.zoomToFit:hover {
+  opacity: .6;
+}
+.zoomToFit:active {
+  opacity: .8;
+}
+
+
+.blocklyBackpack {
+  opacity: .4;
+}
+.blocklyBackpackDarken {
+  opacity: .6;
+}
+.blocklyBackpack:active {
+  opacity: .8;
+}
+.blocklyPath {
+        fill-opacity: 1;
+      }
+      .blocklyPathDark {
+        display: flex;
+      }
+      .blocklyPathLight {
+        display: flex;
+      }  ]]></style></defs>"><g xmlns="http://www.w3.org/2000/svg" class="blocklyBlockCanvas"><g class="blocklyCursor"><g width="100" height="5"><rect width="100" height="5" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></rect><rect class="blocklyVerticalMarker" rx="10" ry="10" style="display: none"/><path transform="" style="display: none"><animate attributeType="XML" attributeName="fill" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path><path transform="" style="display: none" fill="none" stroke-width="4"><animate attributeType="XML" attributeName="stroke" dur="1s" values="#cc0a0a;transparent;transparent;" repeatCount="indefinite"/></path></g></g><g data-id="QWW|$jB8+*EL;}|#uA" class="blocklyDraggable" transform="translate(506.8814239501953,214.33334350585938)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#7a4984" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 116.29484558105469  v 5  H 124.29484558105469  V 5  H 124.29484558105469  V 21  H 124.29484558105469  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 202 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 248  H 124.29484558105469  V 264  H 124.29484558105469  V 268  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 8 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 292  V 302  h -116.29484558105469 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#995ba5" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 116.29484558105469  v 5  H 124.29484558105469  V 5  H 124.29484558105469  V 21  H 124.29484558105469  V 25  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 202 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 248  H 124.29484558105469  V 264  H 124.29484558105469  V 268  H 50  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 8 a 8 8 0 0,0 8,8  H 124.29484558105469  H 124.29484558105469  V 292  V 302  h -116.29484558105469 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#b88cc0" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 123.79484558105469  H 123.79484558105469  M 20,243  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 95.79484558105469,0  H 123.79484558105469  M 20,292  m 1.9895923599143455,-1.9895923599143455 a 8.5 8.5 0 0,0 6.0104076400856545,2.4895923599143455  l 95.79484558105469,0  H 123.79484558105469  M 0,302  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">Setup()</text></g><g transform="translate(10,248)"><text class="blocklyText" x="0" y="13">Endlosschleife()</text></g><g data-id="]:hOjWaQDXvic9LLG5U4" class="blocklyDraggable" style="display: block;" transform="translate(21,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 270.9734802246094  v 5  H 300.9734802246094  V 5  H 300.9734802246094  V 21  H 300.9734802246094  V 21  V 25  h -271.4734802246094  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 270.9734802246094  v 5  H 300.9734802246094  V 5  H 300.9734802246094  V 21  H 300.9734802246094  V 21  V 25  h -271.4734802246094  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,8 a 7.5 7.5 0 0,1 8,-7.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 300.4734802246094  H 300.4734802246094  M 0.5,24.5  V 8 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">LED an</text></g><g transform="translate(68.89762878417969,5)"><text class="blocklyText" x="0" y="13">Pin:</text></g><g class="blocklyEditableText" transform="translate(99.15888977050781,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="97.74517822265625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">BUILTIN_1<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(201.90406799316406,5)"><text class="blocklyText" x="0" y="13">Status</text></g><g class="blocklyEditableText" transform="translate(248.46453857421875,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="47.508941650390625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Ein<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g data-id="A7Ukwo}l~0#?|v4PL2O$" class="blocklyDraggable" transform="translate(0,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#49845d" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPath" stroke="none" fill="#5ba574" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPathLight" stroke="#8cc09e" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 227.48561096191406  H 227.48561096191406  M 0.5,35.5  V 0.5 &#10; M 119.66676330566406,5.5  v 27  h -54.61273193359375  M 64.55403137207031,10  m -5,14.3  l 3.68,-2.1 "/><g data-id="nOzR,qm;3%d[:IyoX~%9" transform="translate(57.55403137207031,6)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#495284" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5b67a5" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8c95c0" d=" m 8,0  m 0.5,0.5  H 60.11273193359375  H 60.11273193359375  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="42.61273193359375" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">1000</text></g></g><g transform="translate(10,10)"><text class="blocklyText" x="0" y="13">Warte</text></g><g transform="translate(129.16676330566406,10)"><text class="blocklyText" x="0" y="13">Millisekunden</text></g><g data-id="~o2JHlF;a/=y6ep1:k,{" class="blocklyDraggable" transform="translate(0,37)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 275.04649353027344  v 5  H 305.04649353027344  V 5  H 305.04649353027344  V 21  H 305.04649353027344  V 21  V 25  h -275.54649353027344  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 275.04649353027344  v 5  H 305.04649353027344  V 5  H 305.04649353027344  V 21  H 305.04649353027344  V 21  V 25  h -275.54649353027344  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 304.54649353027344  H 304.54649353027344  M 0.5,24.5  V 0.5 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">LED an</text></g><g transform="translate(68.89762878417969,5)"><text class="blocklyText" x="0" y="13">Pin:</text></g><g class="blocklyEditableText" transform="translate(99.15888977050781,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="97.74517822265625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">BUILTIN_1<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(201.90406799316406,5)"><text class="blocklyText" x="0" y="13">Status</text></g><g class="blocklyEditableText" transform="translate(248.46453857421875,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="51.58195495605469" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Aus<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g data-id="kI?WY!KYc!{?Jp-[?P!L" class="blocklyDraggable" transform="translate(0,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#49845d" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPath" stroke="none" fill="#5ba574" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPathLight" stroke="#8cc09e" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 227.48561096191406  H 227.48561096191406  M 0.5,35.5  V 0.5 &#10; M 119.66676330566406,5.5  v 27  h -54.61273193359375  M 64.55403137207031,10  m -5,14.3  l 3.68,-2.1 "/><g data-id="N!d9@ktE2B;@jlh5~yo~" transform="translate(57.55403137207031,6)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#495284" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5b67a5" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8c95c0" d=" m 8,0  m 0.5,0.5  H 60.11273193359375  H 60.11273193359375  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="42.61273193359375" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">1000</text></g></g><g transform="translate(10,10)"><text class="blocklyText" x="0" y="13">Warte</text></g><g transform="translate(129.16676330566406,10)"><text class="blocklyText" x="0" y="13">Millisekunden</text></g><g data-id="/$;K+KM|OL%se|[r;S:9" class="blocklyDraggable" transform="translate(0,37)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 270.9734802246094  v 5  H 300.9734802246094  V 5  H 300.9734802246094  V 21  H 300.9734802246094  V 21  V 25  h -271.4734802246094  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 270.9734802246094  v 5  H 300.9734802246094  V 5  H 300.9734802246094  V 21  H 300.9734802246094  V 21  V 25  h -271.4734802246094  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 300.4734802246094  H 300.4734802246094  M 0.5,24.5  V 0.5 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">LED an</text></g><g transform="translate(68.89762878417969,5)"><text class="blocklyText" x="0" y="13">Pin:</text></g><g class="blocklyEditableText" transform="translate(99.15888977050781,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="97.74517822265625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">BUILTIN_1<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(201.90406799316406,5)"><text class="blocklyText" x="0" y="13">Status</text></g><g class="blocklyEditableText" transform="translate(248.46453857421875,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="47.508941650390625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Ein<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g data-id="j%)V3+z8^7g.Q,`652aJ" class="blocklyDraggable" transform="translate(0,26)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#49845d" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPath" stroke="none" fill="#5ba574" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 197.98561096191406  v 5  H 227.98561096191406  V 5  H 227.98561096191406  V 32  H 227.98561096191406  V 32  V 36  h -198.48561096191406  l -6,4  -3,0  -6,-4  h -14.5  H 0 z&#10; M 64.55403137207031,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 7  h 54.61273193359375  v -27 z"/><path class="blocklyPathLight" stroke="#8cc09e" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 227.48561096191406  H 227.48561096191406  M 0.5,35.5  V 0.5 &#10; M 119.66676330566406,5.5  v 27  h -54.61273193359375  M 64.55403137207031,10  m -5,14.3  l 3.68,-2.1 "/><g data-id="l8N3EWBL?KdK;q*8|1=p" transform="translate(57.55403137207031,6)" class="blocklyDraggable" style="display: block;"><path class="blocklyPathDark" transform="translate(1,1)" fill="#495284" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5b67a5" d=" m 8,0  h 52.61273193359375  v 5  H 60.61273193359375  V 5  H 60.61273193359375  V 21  H 60.61273193359375  V 21  V 25  h -52.61273193359375  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;"/><path class="blocklyPathLight" stroke="#8c95c0" d=" m 8,0  m 0.5,0.5  H 60.11273193359375  H 60.11273193359375  M 8.5,24.5  M 8.5,24.5  V 20  v -1.5  m -7.36,-0.5  q -1.52,-5.5  0,-11  m 7.36,1  V 0.5 &#10;"/><g class="blocklyEditableText" transform="translate(13,5)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="16" width="42.61273193359375" class="blocklyFieldRect"/><text class="blocklyText" x="5" y="13">1000</text></g></g><g transform="translate(10,10)"><text class="blocklyText" x="0" y="13">Warte</text></g><g transform="translate(129.16676330566406,10)"><text class="blocklyText" x="0" y="13">Millisekunden</text></g><g data-id="DH|rB4;/YZA];c,/k}bq" class="blocklyDraggable" transform="translate(0,37)"><path class="blocklyPathDark" transform="translate(1,1)" fill="#498449" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 275.04649353027344  v 5  H 305.04649353027344  V 5  H 305.04649353027344  V 21  H 305.04649353027344  V 21  V 25  h -275.54649353027344  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPath" stroke="none" fill="#5ba55b" d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 275.04649353027344  v 5  H 305.04649353027344  V 5  H 305.04649353027344  V 21  H 305.04649353027344  V 21  V 25  h -275.54649353027344  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;"/><path class="blocklyPathLight" stroke="#8cc08c" d=" m 0,0  m 0.5,0.5  H 14.5  h 0.5  l 6,4  3,0  6,-4  H 304.54649353027344  H 304.54649353027344  M 0,25  m 2.6966991411008934,-2.6966991411008934 a 7.5 7.5 0 0,1 -2.1966991411008934,-5.303300858899107  V 0.5 &#10;"/><g transform="translate(10,5)"><text class="blocklyText" x="0" y="13">LED an</text></g><g transform="translate(68.89762878417969,5)"><text class="blocklyText" x="0" y="13">Pin:</text></g><g class="blocklyEditableText" transform="translate(99.15888977050781,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="97.74517822265625" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">BUILTIN_1<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g><g transform="translate(201.90406799316406,5)"><text class="blocklyText" x="0" y="13">Status</text></g><g class="blocklyEditableText" transform="translate(248.46453857421875,5)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="16" width="51.58195495605469" class="blocklyFieldRect blocklyDropdownRect" stroke="#8cc08c" fill="transparent"/><text class="blocklyText blocklyDropdownText" text-anchor="start" x="5" y="13">Aus<tspan style="fill: rgb(91, 165, 91);"> ▾</tspan></text><image style="display: none;"/></g></g></g></g></g></g></g></g></g></g></svg>

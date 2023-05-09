@@ -1,0 +1,55 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="arduino_functions" id="QWW|$jB8+*EL;}|#uA" deletable="false" x="507" y="214">
+    <statement name="SETUP_FUNC">
+      <block type="sensebox_led" id="]:hOjWaQDXvic9LLG5U4">
+        <field name="PIN">7</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="time_delay" id="A7Ukwo}l~0#?|v4PL2O$">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="nOzR,qm;3%d[:IyoX~%9">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="sensebox_led" id="~o2JHlF;a/=y6ep1:k,{">
+                <field name="PIN">7</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="time_delay" id="kI?WY!KYc!{?Jp-[?P!L">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="N!d9@ktE2B;@jlh5~yo~">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="sensebox_led" id="/$;K+KM|OL%se|[r;S:9">
+                        <field name="PIN">7</field>
+                        <field name="STAT">HIGH</field>
+                        <next>
+                          <block type="time_delay" id="j%)V3+z8^7g.Q,`652aJ">
+                            <value name="DELAY_TIME_MILI">
+                              <block type="math_number" id="l8N3EWBL?KdK;q*8|1=p">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="sensebox_led" id="DH|rB4;/YZA];c,/k}bq">
+                                <field name="PIN">7</field>
+                                <field name="STAT">LOW</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
